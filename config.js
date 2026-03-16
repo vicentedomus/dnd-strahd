@@ -6,7 +6,6 @@ const CONFIG = {
   PLAYER_HASH: "51363c0705588575355eacea0af102e6ab4b3f216f3737fecdc0edf094c09f1d",
   GITHUB_OWNER: "vicentedomus",
   GITHUB_REPO:  "dnd-strahd",
-  USE_NOTION: false,
-  WORKER_URL: ""
-  // GitHub token se guarda en localStorage del DM, nunca en este archivo
+  USE_NOTION: true,
+  WORKER_URL: "https://dnd-strahd-api.vichomiguel.workers.dev"
 };
