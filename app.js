@@ -1057,14 +1057,16 @@ const FORM_SCHEMAS = {
   notas_dm: [
     { key:'nombre',  label:'T\u00edtulo', type:'text', required:true },
     { key:'fecha',   label:'Fecha (YYYY-MM-DD)', type:'text' },
+    { key:'jugadores_presentes', label:'Jugadores presentes', type:'select', options:['','Tino','Caco','Leo','Enoch','Hiram'] },
+    { key:'quests', label:'Quests relacionadas', type:'select-rel-multi', source:'quests' },
     { key:'resumen', label:'Resumen', type:'textarea' },
   ],
   notas_jugadores: [
     { key:'nombre',   label:'T\u00edtulo', type:'text', required:true },
     { key:'fecha',    label:'Fecha (YYYY-MM-DD)', type:'text' },
-    { key:'jugador',  label:'Jugador', type:'select', options:['','Pithor (Caco)','Lupin (Hiram)','Maverick (Enoch)','Doran (Leo)'] },
+    { key:'jugador',  label:'Jugador', type:'select', options:['','Tino','Caco','Leo','Enoch','Hiram'] },
+    { key:'items', label:'Items relacionados', type:'select-rel-multi', source:'items' },
     { key:'resumen',  label:'Resumen', type:'textarea' },
-    { key:'contenido', label:'Notas de sesi\u00f3n', type:'textarea' },
   ],
   notas: [
     { key:'nombre',  label:'T\u00edtulo', type:'text', required:true },
