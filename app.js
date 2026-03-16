@@ -46,11 +46,19 @@ async function bootApp() {
 
   await loadData();
   renderAll();
+  promptGitHubToken();
 }
 
 // ── GITHUB TOKEN ──────────────────────────────────────────
 function getGitHubToken() {
   return localStorage.getItem('gh_token') || '';
+}
+
+function promptGitHubToken() {
+  if (getGitHubToken() || (CONFIG.USE_NOTION && CONFIG.WORKER_URL)) return;
+  if (!isDM()) return;
+  const token = prompt('GitHub Personal Access Token\n\nNecesitas un token con permiso de escritura en el repo ' + CONFIG.GITHUB_REPO + '.\nCómo crear uno: github.com/settings/tokens\n\nPega tu token aquí:');
+  if (token) localStorage.setItem('gh_token', token.trim());
 }
 
 // ── DATA LOADING ──────────────────────────────────────────────
